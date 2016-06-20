@@ -35,8 +35,18 @@
 #import "CXMLDocument_PrivateExtensions.h"
 #import "CXMLNode_PrivateExtensions.h"
 
+#if TARGET_OS_IOS && TARGET_OS_EMBEDDED
+@import libxml;
+#elif TARGET_IPHONE_SIMULATOR
+@import libxmlSimu;
+#elif TARGET_OS_MAC
+@import libxmlMac;
+#else
 #include <libxml/xpath.h>
 #include <libxml/xpathInternals.h>
+#endif
+
+
 
 @implementation CXMLNode (CXMLNode_NamespaceExtensions)
 

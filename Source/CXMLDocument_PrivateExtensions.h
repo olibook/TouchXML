@@ -31,7 +31,15 @@
 
 #import "CXMLDocument.h"
 
+#if TARGET_OS_IOS && TARGET_OS_EMBEDDED
+@import libxml;
+#elif TARGET_IPHONE_SIMULATOR
+@import libxmlSimu;
+#elif TARGET_OS_MAC
+@import libxmlMac;
+#else
 #include <libxml/parser.h>
+#endif
 
 @interface CXMLDocument (CXMLDocument_PrivateExtensions)
 
