@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.library      = 'xml2'
   s.preserve_path = 'libxml/module.modulemap'
-  s.xcconfig     = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2 $(PODS_ROOT)/TouchXML/libxml/' }
+  s.xcconfig     = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2 $(PODS_ROOT)/TouchXML/libxml/' "$(PODS_ROOT)/../../../libxml"}
   s.requires_arc = false 
 end
