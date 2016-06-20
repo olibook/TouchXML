@@ -31,7 +31,16 @@
 
 #import "CXMLNode.h"
 
-#include <tree.h>
+
+#if TARGET_OS_IOS && TARGET_OS_EMBEDDED
+@import libxml;
+#elif TARGET_IPHONE_SIMULATOR
+@import libxmlSimu;
+#elif TARGET_OS_MAC
+@import libxmlMac;
+#else
+#import <libxml/tree.h>
+#endif
 
 enum {
 	CXMLDocumentTidyHTML = 1 << 9, // Based on NSXMLDocumentTidyHTML
