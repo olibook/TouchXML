@@ -7,7 +7,16 @@ Pod::Spec.new do |s|
   s.author   = { 'Jonathan Wight' => 'schwa@toxicsoftware.com' }
   s.source   = { :git => 'https://github.com/TouchCode/TouchXML.git', :tag => '0.1' }
   s.source_files = 'Source/**/*.{h,m}'
-  s.public_header_files = 'Source/TouchXML.h'
+  s.public_header_files = 
+    'Source/CXMLDocument.h',
+    'Source/CXMLDocument_CreationExtensions.h',
+    'Source/CXMLElement.h',
+    'Source/CXMLElement_CreationExtensions.h',
+    'Source/CXMLElement_ElementTreeExtensions.h',
+    'Source/CXMLNode.h',
+    'Source/CXMLNode_CreationExtensions.h',
+    'Source/CXMLNode_XPathExtensions.h',
+  
   s.requires_arc = true
   s.library      = 'xml2'
   s.preserve_path = 'libxml/module.modulemap'
